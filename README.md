@@ -28,7 +28,7 @@ This repo is the distribution point for that agent set: a git-based marketplace 
 
 To run `lfx-position-and-brand`
 
-Option 1. Build the full brand and positioning kit for [Project name] ([domain]), using all six skills in the lfx-mos-brand-positioning plugin, in this order: messaging-framework, boilerplates, faq, brand-kit, one-pager, presentation-template. Sources: [website], [press release link or attached file], [deck or integrated marketing plan, if any]. Logo files: [attached SVGs or zip]. Notes: [audience, words to avoid]. Save each skill's JSON output and every file it produces to one folder, then list what was created, which sources couldn't be read and which gaps need an answer from the team.
+Option 1. Build the full brand and positioning kit for [Project name] ([domain]), using all six skills in the `lfx-position-and-brand` plugin, in this order: messaging-framework, boilerplates, faq, brand-kit, one-pager, presentation-template. Sources: [website], [press release link or attached file], [deck or integrated marketing plan, if any]. Logo files: [attached SVGs or zip]. Notes: [audience, words to avoid]. Save each skill's JSON output and every file it produces to one folder, then list what was created, which sources couldn't be read and which gaps need an answer from the team.
 
 Option 2. One skill at a time, in this order
 1. Messaging framework - Draft the messaging framework for [Project] ([domain]) from [sources]. Save the output as messaging-framework.json.
