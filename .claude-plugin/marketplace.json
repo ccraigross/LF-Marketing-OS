@@ -31,6 +31,23 @@
       ]
     },
     {
+      "name": "lfx-position-and-brand",
+      "source": "./plugins/lfx-position-and-brand",
+      "description": "v0.4.0 — NEW. Brand & Positioning: six stateless skills that replace messaging-document, brand-guidelines and icp-target-markets-agent. messaging-framework drafts the messaging framework with ICPs and message house; boilerplates and faq draft from the approved framework; brand-kit reads the project's real logos and site and renders the 16-page brand kit book (HTML, PDF); presentation-template renders a 16:9 .pptx with 12 slide masters; one-pager renders a letter-size page (HTML, PDF). Input object in, JSON or files out; no workflow state.",
+      "category": "Foundation Agents",
+      "tags": [
+        "messaging-framework",
+        "message-house",
+        "icp",
+        "boilerplates",
+        "faq",
+        "brand-kit",
+        "presentation-template",
+        "one-pager",
+        "foundation-setup"
+      ]
+    },
+    {
       "name": "messaging-document",
       "source": "./plugins/messaging-document",
       "description": "v1.0.0 — Runs first of the foundation agents. Builds a project's Messaging Document (vision, mission, positioning, pillars, message house, proof points, objections, copy primitives) as a concise LF 2025 slide deck with a Review Sheet and a .fields.yaml sidecar. Command: build-lf-messaging-doc.",

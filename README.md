@@ -17,12 +17,13 @@ The agents are organized by where they sit in a marketing workflow:
 
 This repo is the distribution point for that agent set: a git-based marketplace that Cowork (or Claude Code) reads directly, so plugins can be installed and updated without emailing files around.
 
-## 2. The 30 plugins in this marketplace
+## 2. The 31 plugins in this marketplace
 
 **Foundation** — run in this order; each one's output is the next one's input
-1. `messaging-document` (v1.0.0) — Builds a project's Messaging Document: vision, mission, positioning, pillars, message house, proof points, objections and copy primitives, as a concise LF slide deck. Command `build-lf-messaging-doc`.
-2. `brand-guidelines` (v1.1.0) — Builds a project's Brand Guidelines from the Messaging Document: logo rules, palette, typography, iconography, voice and tone, as an image-led LF slide deck plus `brand.json`. Command `build-lf-brand-guidelines`.
-3. `icp-target-markets-agent` (v0.4.0) — Builds a project's Target Markets and ICP document: firmographics, ICPs, 4–9 personas on one fixed template, Fit × Warmth rules, in 8–10 pages.
+- **NEW** `lfx-position-and-brand` (v0.4.0) — Brand & Positioning plugin with six stateless skills that replace plugins 1–3 below: `messaging-framework` (messaging framework, ICPs, message house and key numbers as JSON), `boilerplates` (one-liner, 25/50/100-word descriptions), `faq` (grouped Q&A from the sources, unanswered questions flagged), `brand-kit` (kit tokens from the project's real logos and site, plus the 16-page brand kit book as HTML and PDF), `presentation-template` (16:9 .pptx with 12 slide masters and a brand-reference appendix) and `one-pager` (letter-size HTML and PDF). Input object in, JSON or files out; no workflow state.
+1. REPLACED `messaging-document` (v1.0.0) — Builds a project's Messaging Document: vision, mission, positioning, pillars, message house, proof points, objections and copy primitives, as a concise LF slide deck. Command `build-lf-messaging-doc`.
+2. REPLACED `brand-guidelines` (v1.1.0) — Builds a project's Brand Guidelines from the Messaging Document: logo rules, palette, typography, iconography, voice and tone, as an image-led LF slide deck plus `brand.json`. Command `build-lf-brand-guidelines`.
+3. REPLACED `icp-target-markets-agent` (v0.4.0) — Builds a project's Target Markets and ICP document: firmographics, ICPs, 4–9 personas on one fixed template, Fit × Warmth rules, in 8–10 pages.
 4. `audience-lists-agent` (v0.1.0) — Builds a project's Audience Lists document: a tiered, prioritized earned media target list with strategy and messages per outlet, the top 5–15 social media voices already talking about the project (Octolens, LFX Lens), and up to 20 existing HubSpot/Segment/LFX audiences from other foundations with overlapping ICPs.
 
 The three foundation agents share one intake and format standard (`references/input-doc-mapping.md`, identical in each): they first ask whether the foundation already has its own messaging, brand or audience documents and, if so, map them into the standard fields, quote the wording verbatim and interview only for the gaps; every document opens with a Review Sheet the ED or SME approves; and each writes a `.fields.yaml` sidecar that downstream agents read instead of the document. The Messaging Document runs first and needs no Brand Kit; the Brand Guidelines read its sidecar and write the `brand.json` that re-skins every later deck and document.
@@ -69,6 +70,8 @@ The three foundation agents share one intake and format standard (`references/in
 
 ## 2a. Latest changes
 
+**2026-10-15 — lfx-position-and-brand 0.4.0 (new) replaces messaging-document, brand-guidelines and icp-target-markets-agent.** One plugin, six skills, one per artifact: `messaging-framework`, `boilerplates`, `faq`, `brand-kit`, `presentation-template` and `one-pager`. The drafting skills return JSON (`mf`, `icp`, `mh`, `nums`, `bp`, `faq`, `kit`) with a `report` object and can check hand edits (`revision.mode: "check"`); the rendering skills produce the 16-page brand kit book, the .pptx presentation template with slide preview, and the one pager from content the drafting skills already produced. All six are stateless and hold no queue, storage, review, sign-off or live LFX data; those belong to the host app (see the plugin's `DEVELOPER.md`). The three replaced plugins stay in the marketplace for existing installs but are no longer the recommended path.
+
 **2026-10-08 — messaging-document 1.0.0 and brand-guidelines 1.1.0 replace message-foundation-agent and brand-guidelines-agent.** The foundation agents now run Messaging Document → Brand Guidelines → ICP. `messaging-document` (`build-lf-messaging-doc`) needs no Brand Kit: it maps the foundation's own documents, reads the site, README, press release and LFX record, asks up to ten PMM questions for the gaps, and delivers a 14–18 slide deck on the LF 2025 template (Review Sheet, communications framework, positioning, alternatives, pillars, message house, proof points, objections, copy primitives, CTAs) plus Markdown and a `.fields.yaml` sidecar. `brand-guidelines` (`build-lf-brand-guidelines`) reads that sidecar, documents the existing identity from the brand page, site CSS and logo files in the form of the published LF brand pages (x402, OSAIA, ASWF), derives voice and tone in the run, draws every logo rule on the project's own mark with `brand_graphics.py`, and writes the `brand.json` every later agent uses. Both open with a Review Sheet; the Word-document output is retired.
 
 **2026-10-06 — audience-lists-agent 0.1.0 (new).** Skill `build-audience-lists`: from the Brand Kit, Message Foundation and ICP it writes one Word document on the LF Agent DOCS template (re-skinned with the project's brand) with three sections: earned media targets by the strategy deck's five tiers, social media voices from Octolens and LFX Lens, and existing audiences in HubSpot, Segment and LFX. Read-only against every system. First run: x402 Foundation.
@@ -81,7 +84,7 @@ The three foundation agents share one intake and format standard (`references/in
 
 1. Open **Customize** in the sidebar, then **Plugins**.
 2. Click **Add marketplace** and enter this repo: `paulhinz/LF-Marketing-OS` (or the full URL, `https://github.com/paulhinz/LF-Marketing-OS`).
-3. Click **Browse plugins** — the 29 plugins above will be listed.
+3. Click **Browse plugins** — the 31 plugins above will be listed.
 4. Select and **Install** whichever ones you need.
 
 This repo is public, so anyone can browse the code or add it as a marketplace without needing collaborator access or GitHub sign-in. To get updates later, come back to Customize → Plugins, find this marketplace, and click **Update**.
