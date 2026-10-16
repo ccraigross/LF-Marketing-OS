@@ -48,6 +48,21 @@
       ]
     },
     {
+      "name": "lfx-mos-website",
+      "source": "./plugins/lfx-mos-website",
+      "description": "v0.1.0 — NEW. Builds a Linux Foundation project's website from its brand and positioning kit, checked for WCAG 2.2 AA, as a .zip with an offline copy editor. Use it beside `lfx-mos-brand-positioning`.",
+      "category": "Foundation Agents",
+      "tags": [
+        "website",
+        "static-site",
+        "wcag",
+        "accessibility",
+        "messaging-framework",
+        "brand-kit",
+        "foundation-setup"
+      ]
+    },
+    {
       "name": "messaging-document",
       "source": "./plugins/messaging-document",
       "description": "v1.0.0 — Runs first of the foundation agents. Builds a project's Messaging Document (vision, mission, positioning, pillars, message house, proof points, objections, copy primitives) as a concise LF 2025 slide deck with a Review Sheet and a .fields.yaml sidecar. Command: build-lf-messaging-doc.",
@@ -128,18 +143,6 @@
         "member-engagement",
         "linkedin",
         "social-listening"
-      ]
-    },
-    {
-      "name": "website-designer-agent",
-      "source": "./plugins/website-designer-agent",
-      "description": "Turns an LF project's three foundation docs into an approved sitemap, a complete Hugo website, and a GitHub-deployed, DNS-ready launch package — with four human approval gates.",
-      "category": "Foundation Agents",
-      "tags": [
-        "website",
-        "hugo",
-        "github",
-        "foundation-setup"
       ]
     },
     {
