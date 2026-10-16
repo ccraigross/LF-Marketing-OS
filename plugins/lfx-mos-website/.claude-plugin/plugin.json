@@ -1,0 +1,17 @@
+{
+  "name": "lfx-mos-website",
+  "version": "0.1.0",
+  "description": "LFX Marketing OS · Website: renders a Linux Foundation project's 11-page static website from its messaging framework, boilerplates, FAQ and brand kit, audits it for WCAG 2.2 AA, and returns a .zip with an offline copy editor. Companion to lfx-mos-brand-positioning.",
+  "author": {
+    "name": "Craig, LF Marketing"
+  },
+  "keywords": [
+    "linux-foundation",
+    "marketing",
+    "website",
+    "static-site",
+    "wcag",
+    "accessibility",
+    "messaging-framework"
+  ]
+}
