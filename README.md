@@ -21,6 +21,7 @@ This repo is the distribution point for that agent set: a git-based marketplace 
 
 **Foundation** — run in this order; each one's output is the next one's input
 - **NEW** `lfx-position-and-brand` (v0.4.0) — (replaces:`messaging-document` `brand-guidelines` `icp-target-markets-agent`)  Positioning and Brand plugin with six stateless skills that replace plugins 1–3 below: `messaging-framework` (messaging framework, ICPs, message house and key numbers as JSON), `boilerplates` (one-liner, 25/50/100-word descriptions), `faq` (grouped Q&A from the sources, unanswered questions flagged), `brand-kit` (kit tokens from the project's real logos and site, plus the 16-page brand kit book as HTML and PDF), `presentation-template` (16:9 .pptx with 12 slide masters and a brand-reference appendix) and `one-pager` (letter-size HTML and PDF). Input object in, JSON or files out; no workflow state.
+- **NEW** `lfx-mos-website` (v0.1.0) — Builds a Linux Foundation project's website from its brand and positioning kit, checked for WCAG 2.2 AA, as a .zip with an offline copy editor. Use it beside `lfx-mos-brand-positioning`.
 1. REPLACED `messaging-document` (v1.0.0) — Builds a project's Messaging Document: vision, mission, positioning, pillars, message house, proof points, objections and copy primitives, as a concise LF slide deck. Command `build-lf-messaging-doc`.
 2. REPLACED `brand-guidelines` (v1.1.0) — Builds a project's Brand Guidelines from the Messaging Document: logo rules, palette, typography, iconography, voice and tone, as an image-led LF slide deck plus `brand.json`. Command `build-lf-brand-guidelines`.
 3. REPLACED `icp-target-markets-agent` (v0.4.0) — Builds a project's Target Markets and ICP document: firmographics, ICPs, 4–9 personas on one fixed template, Fit × Warmth rules, in 8–10 pages.
@@ -39,7 +40,6 @@ Option 2. One skill at a time, in this order
 6. Presentation template - Build the presentation template for [Project] from the outputs folder.
 
 **Foundation (supporting)**
-- `website-designer-agent` — Builds and deploys a project website from the foundation documents.
 - `lfx-marketing-os-qa` — Fact-checks and reviews foundation documents before they go out.
 - `plain-writing` — Keeps all written output in a plain, simple style.
 - `marketing-committee-chair-recommendation` — Reviews project's committee members and recommends marketing members.
