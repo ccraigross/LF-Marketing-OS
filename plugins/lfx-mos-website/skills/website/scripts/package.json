@@ -1,0 +1,1 @@
+{ "name": "lfx-mos-website", "private": true, "dependencies": {}, "optionalDependencies": { "puppeteer": "22.15.0", "axe-core": "4.10.2" } }
