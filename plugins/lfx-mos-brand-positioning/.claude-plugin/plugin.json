@@ -1,7 +1,7 @@
 {
   "name": "lfx-mos-brand-positioning",
-  "version": "0.5.0",
-  "description": "LFX Marketing OS \u00b7 Brand & Positioning: six stateless skills that draft a Linux Foundation project's messaging framework (with ICPs and message house), boilerplates, FAQ and brand kit, and render the brand kit book, presentation template and one pager.",
+  "version": "0.5.1",
+  "description": "LFX Marketing OS · Brand & Positioning: six stateless skills that draft a Linux Foundation project's messaging framework (with ICPs and message house), boilerplates, FAQ and brand kit, and render the brand kit book, presentation template and one pager.",
   "author": {
     "name": "Craig, LF Marketing"
   },
@@ -13,5 +13,6 @@
     "message-house",
     "messaging-framework",
     "icp"
-  ]
+  ],
+  "displayName": "LFX Marketing OS · Brand & Positioning"
 }
