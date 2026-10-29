@@ -34,6 +34,7 @@ One JSON object, assembled by the caller from content the drafting skills alread
 | `content.nums` | presentation-template, optional | Fills the Key numbers layout; padded with `[00]` placeholders. |
 | `logos.light` | optional | SVG **text** of the horizontal logo for light grounds. Without it, placeholder marks are drawn from `kit.word`. |
 | `logos.dark` | optional | SVG text of the white/reversed logo. Falls back to `light`. |
-| `logos.symbol` | optional | An SVG viewBox that crops the symbol out of `light`, or null. |
+| `logos.symbol` | optional | An SVG viewBox that crops the symbol out of `light`, or null. When it is missing, the brand-kit book finds the symbol itself (the part of the lockup before the first clear gap) and reports what it found. |
+| `logos.wordmark` | optional | An SVG viewBox for the wordmark alone; found automatically with the symbol. Used to build the stacked lockup. |
 
 Logos are always the project's real files. Never draw, describe or reconstruct a logo.

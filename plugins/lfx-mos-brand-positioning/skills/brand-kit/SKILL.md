@@ -2,7 +2,7 @@
 name: brand-kit
 description: "This skill should be used to \"draft a brand kit\", \"pull brand colors and fonts\", \"make the brand kit for a project\" or \"build the brand kit PDF\" for a Linux Foundation project in the LFX Marketing OS. It reads the project's real logo files, website and brand page, returns the kit tokens (colors, typeface, voice) as JSON, and renders the 16-page brand kit book as HTML and PDF.\n"
 metadata:
-  version: "0.5.0"
+  version: "0.5.1"
 ---
 
 # Brand kit
@@ -34,7 +34,7 @@ Rules: no invented colors, fonts or marks; every value has a source. US English,
 ## Part 2 · Render the book
 Input: `references/render-input.md` (needs `content.kit`, `content.mh`, `content.bp`, and `logos` when available).
 ```
-cd scripts && npm install        # first run only; installs puppeteer for the PDF
+cd scripts && npm install        # first run only; installs resvg (logo parts) and puppeteer (PDF)
 node build_book.js <input.json> <out_dir>
 ```
 **From a folder of skill outputs.** Instead of an input file, pass the folder that holds the drafting skills' JSON files (any names; full outputs like `{"mf", "icp", "mh", "nums", "report"}` or bare values like the boilerplates array both work) and the logo SVGs, plus the project name and domain:
@@ -44,6 +44,10 @@ node build_book.js ./outputs-folder <out_dir> --name "Akrites" --domain akrites.
 `scripts/assemble.js` combines them (`node assemble.js <folder> --name … --domain … -o input.json` writes the combined input and lists what's found and missing). Logos are picked by file name: the white/reversed file for dark grounds, the full-color one for light. If something is missing, the script stops and names the skill to run.
 
 Prints JSON with `html` (always, print-ready at 11 × 8.5 in) and `pdf` (when headless Chrome is available).
+
+**Logo parts.** The symbol pages (logo system, symbol and symbol in shape, clear space) show the symbol alone, never the full lockup. If `logos.symbol` isn't given, `scripts/logo.js` finds the symbol and the wordmark in the lockup (the first clear gap, left-to-right or top-to-bottom) and the script's output says what it found under `logo`; when the logo has no clear gap it says so, and you should pass `logos.symbol` as an SVG viewBox. The stacked lockup is the symbol above the wordmark when only a horizontal lockup is supplied. Every logo is fitted inside its tile, never stretched past it.
+
+**Fixed copy.** The cover subtext is always "Logos, color, type and usage on one reference, for members, partners and the press." Icons are one colour (the primary dark on light, white on dark); no accent icon.
 
 16 pages: cover, contents, logo system, colorways, clear space and minimum size, symbol and symbol in shape, partnership lockup, watchouts, color palette, color contrast (WCAG ratios computed from the palette), typography, iconography, imagery and graphic elements, example usage, voice in brief, back cover.
 

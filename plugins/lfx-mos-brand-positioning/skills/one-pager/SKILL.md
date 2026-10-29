@@ -2,7 +2,7 @@
 name: one-pager
 description: "This skill should be used to \"build the one pager\", \"make a project one-sheet\", \"make a one-page PDF for members and partners\" or \"regenerate the one pager\" for a Linux Foundation project in the LFX Marketing OS. It renders a letter-size page (HTML and PDF) from the message house, the 50-word boilerplate and the brand kit.\n"
 metadata:
-  version: "0.5.0"
+  version: "0.5.1"
 ---
 
 # One pager

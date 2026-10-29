@@ -2,7 +2,7 @@
 name: boilerplates
 description: "This skill should be used to \"write boilerplates\", \"write a one-liner\", \"write the 25, 50 and 100-word descriptions\", \"write the about-the-project paragraph for a press release\" or \"refresh a project's boilerplate\" for a Linux Foundation project. It returns the bp content (one-liner, 25, 50 and 100 words) as JSON, from the project's sources and, when it exists, its messaging framework.\n"
 metadata:
-  version: "0.5.0"
+  version: "0.5.1"
 ---
 
 # Boilerplates

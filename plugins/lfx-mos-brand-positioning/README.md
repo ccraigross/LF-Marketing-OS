@@ -1,4 +1,4 @@
-# lfx-mos-brand-positioning (plugin) · v0.5.0
+# lfx-mos-brand-positioning (plugin) · v0.5.1
 
 Six skills, one per brand & positioning artifact.
 
@@ -19,6 +19,7 @@ All six are stateless: an input object in, JSON or files out. They hold no workf
 - "Build the presentation template and one pager for Akrites."
 
 ## Changes
+- **0.5.1** Brand kit book: symbol pages show the symbol alone (found automatically in the lockup when no crop is supplied; works when the brand dark is pure black); stacked lockup built from symbol and wordmark; logos never overflow their tiles; fixed cover subtext; one-colour icons; spacing under the primary lockup.
 - **0.5.0** WCAG 2.2 AA: accessible working colours, logo recolouring on dark and light grounds, a rendered contrast check that corrects and reports, tagged PDFs and logo alt text. Fixes grey-on-grey logos when no reversed logo is supplied.
 - **0.4.1** Renderers accept a folder of skill outputs (`scripts/assemble.js` combines the JSON files and logo SVGs) and name the skill to run when something is missing.
 - **0.4.0** Text skills check hand edits (`revision.mode: "check"`); the one pager always renders from the authored message house and boilerplate.

@@ -2,7 +2,7 @@
 name: presentation-template
 description: "This skill should be used to \"build the presentation template\", \"make the project's PowerPoint template\", \"make a Google Slides template\", \"build the slide masters\" or \"regenerate the deck template\" for a Linux Foundation project in the LFX Marketing OS. It renders a 16:9 .pptx with 12 real slide masters and a brand-reference appendix (message house, messaging framework, ICPs, boilerplates, FAQ, brand kit) from content the other skills already produced, plus an HTML preview of every slide.\n"
 metadata:
-  version: "0.5.0"
+  version: "0.5.1"
 ---
 
 # Presentation template

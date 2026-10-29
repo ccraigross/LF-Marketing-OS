@@ -2,7 +2,7 @@
 name: faq
 description: "This skill should be used to \"write a project FAQ\", \"draft questions and answers for the website\", \"prepare press Q&A\", \"what will members and journalists ask\" or \"refresh a project's FAQ\" for a Linux Foundation project. It returns the faq content as JSON: grouped questions answered only from the sources, with unanswered questions flagged for the team.\n"
 metadata:
-  version: "0.5.0"
+  version: "0.5.1"
 ---
 
 # FAQ

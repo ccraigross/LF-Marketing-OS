@@ -17,14 +17,16 @@ function cropSvg(svg, vb) { return svg.replace(/viewBox="[^"]+"/, `viewBox="${vb
 const hasLogo = p => !!p.logos?.light;
 /* an <img> of the real logo: kind = light (for light grounds) | dark (for dark grounds) | mono | symbol | symbolDark */
 function logoImg(p, kind, h, extra = "", ground) {
+  /* kind: light | dark | mono, optionally prefixed by part: symbol / symbolDark / symbolMono, wordmark / wordmarkDark / wordmarkMono */
   const L = p.logos; if (!L?.light) return "";
-  const dk = kind === "dark" || kind === "symbolDark";
-  let svg = dk ? (L.dark || L.light) : L.light;
-  if ((kind === "symbol" || kind === "symbolDark") && L.symbol) svg = cropSvg(svg, L.symbol);
+  const part = /^symbol/.test(kind) ? "symbol" : /^wordmark/.test(kind) ? "wordmark" : null;
+  const tone = /dark$/i.test(kind) ? "dark" : /mono$/i.test(kind) ? "mono" : "light";
+  let svg = tone === "dark" ? (L.dark || L.light) : L.light;
+  if (part && L[part]) svg = cropSvg(svg, L[part]);
   /* WCAG 1.4.11: parts of the logo that fall under 3:1 against the ground are recoloured (white on dark, near-black on light) */
-  if (kind !== "mono") svg = fixLogo(svg, ground || (dk ? (p.content?.kit?.dark || "#111827") : "#FFFFFF"));
-  const f = kind === "mono" ? "filter:brightness(0);" : "";
-  return `<img src="${svgUri(svg)}" alt="${esc(p.name)} logo" style="height:${h}px;width:auto;display:block;${f}${extra}">`;
+  if (tone !== "mono") svg = fixLogo(svg, ground || (tone === "dark" ? (p.content?.kit?.dark || "#111827") : "#FFFFFF"));
+  const f = tone === "mono" ? "filter:brightness(0);" : "";
+  return `<img src="${svgUri(svg)}" alt="${esc(p.name)} ${part || "logo"}" style="height:${h}px;width:auto;max-width:100%;object-fit:contain;display:block;${f}${extra}">`;
 }
 
 /* Input object -> the project shape the renderers expect. */

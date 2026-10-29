@@ -2,7 +2,7 @@
 name: messaging-framework
 description: "This skill should be used to \"draft a messaging framework\", \"draft a message house\", \"write the positioning\", \"write value propositions and key messages per goal\", \"write sound bites\", \"draft ICPs\", \"define the project's segments or personas\", \"write say / avoid rules\" or \"pull key numbers for the deck\" for a Linux Foundation project, from its website, press release, deck, integrated marketing plan and notes. It returns the mf, icp, mh and nums content as JSON. Boilerplates and the FAQ are separate skills.\n"
 metadata:
-  version: "0.5.0"
+  version: "0.5.1"
 ---
 
 # Messaging framework
