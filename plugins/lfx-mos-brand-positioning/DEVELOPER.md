@@ -6,6 +6,9 @@ The skills generate content and files only. Everything you see in the prototype 
 - **Drafting skills** (`messaging-framework`, `boilerplates`, `faq`, `brand-kit` Part 1) take the input object in `skills/messaging-framework/references/input.md` and return JSON in each skill's `references/output-schema.md`, plus a `report` (sources read, sources that failed, gaps, notes). Show `sources_failed` and `gaps` to the reviewer; don't store `report` as content.
 - **Renderers** (`presentation-template`, `one-pager`, `brand-kit` Part 2) take the object in `references/render-input.md` and write files with `node scripts/<build>.js <input.json> <out_dir>`, printing a JSON summary. Node 18+. `npm install` in each `scripts/` folder. PDFs need headless Chrome (puppeteer); without it the HTML is still produced and prints to the same PDF.
 
+## Project context comes from the host
+Marketing OS opens this plugin from inside a project, so there is no project list, search or portfolio view to build. The host passes the project it is in as `project.name`, `project.domain` and `project.description`, plus that project's stored `sources` and logo files, to every skill call. The plugin's whole UI is one project's Brand & Positioning workspace: the six outputs with status and next step, sources and agent runs, review, edit and sign-off. The prototype's project switcher is a demo stand-in for this context.
+
 ## Skills run only when asked
 The skills don't call each other. Claude picks skills from the request, and it will run a skill whose output another one needs: asking for the brand kit runs the messaging framework and boilerplates first, because the brand kit book needs `mh` and `bp`; the FAQ, one pager and presentation template don't run unless asked. To get all six, ask for the full kit ("Build the full brand and positioning kit for <project>"), or have the host call all six in the order below.
 
